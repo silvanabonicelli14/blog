@@ -8,7 +8,7 @@
 		<version>2.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>cgm.com.oak.blog</groupId>
 	<artifactId>blog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>blog</name>
@@ -80,6 +80,11 @@
 						<plugin>spring</plugin>
 						<plugin>jpa</plugin>
 					</compilerPlugins>
+					<pluginOptions>
+						<option>all-open:annotation=javax.persistence.Entity</option>
+						<option>all-open:annotation=javax.persistence.Embeddable</option>
+						<option>all-open:annotation=javax.persistence.MappedSuperclass</option>
+					</pluginOptions>
 				</configuration>
 				<dependencies>
 					<dependency>

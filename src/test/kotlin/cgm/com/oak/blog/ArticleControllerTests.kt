@@ -1,6 +1,7 @@
 package cgm.com.oak.blog
 
-import cgm.com.oak.blog.domain.models.Article
+
+import cgm.com.oak.blog.domain.models.Article1
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -14,15 +15,15 @@ import org.springframework.test.web.servlet.get
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
     classes = [BlogApplication::class])
 @AutoConfigureMockMvc
-class IntegrationTests(
+class ArticleControllerTests(
     @Autowired private val mockMvc: MockMvc
 ) {
 
     private val mapper = jacksonObjectMapper()
 
     val articles  = listOf(
-        Article(1,"title x","body of article x"),
-        Article(2,"title y","body of article y")
+        Article1(1,"title x","body of article x"),
+        Article1(2,"title y","body of article y")
     )
     @Test
     fun `can get all articles`() {
