@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.get
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
     classes = [BlogApplication::class])
 @AutoConfigureMockMvc
-class ArticleControllerTests(
+class Article1ControllerTests(
     @Autowired private val mockMvc: MockMvc
 ) {
 

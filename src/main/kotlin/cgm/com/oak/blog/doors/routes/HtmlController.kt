@@ -23,14 +23,14 @@ class HtmlController(private val repository: ArticleRepository) {
     }
 
     @GetMapping("/article/{slug}")
-    fun article1(@PathVariable slug: String, model: Model): String {
+    fun article(@PathVariable slug: String, model: Model): String {
         val article = repository
             .findBySlug(slug)
             ?.render()
             ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "This article does not exist")
         model["title"] = article.title
         model["article"] = article
-        return "article1"
+        return "article"
     }
 
     fun Article.render() = RenderedArticle(
