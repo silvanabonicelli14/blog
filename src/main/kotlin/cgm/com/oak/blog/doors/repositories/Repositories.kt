@@ -1,4 +1,4 @@
-package cgm.com.oak.blog
+package cgm.com.oak.blog.doors.repositories
 import cgm.com.oak.blog.domain.models.Article
 import cgm.com.oak.blog.domain.models.User
 import org.springframework.data.repository.CrudRepository

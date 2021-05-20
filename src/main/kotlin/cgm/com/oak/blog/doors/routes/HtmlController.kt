@@ -1,7 +1,7 @@
 package cgm.com.oak.blog.doors.routes
 
 import cgm.com.oak.blog.domain.models.Article
-import cgm.com.oak.blog.ArticleRepository
+import cgm.com.oak.blog.doors.repositories.ArticleRepository
 import cgm.com.oak.blog.domain.models.User
 import cgm.com.oak.blog.format
 import org.springframework.http.HttpStatus
@@ -23,14 +23,14 @@ class HtmlController(private val repository: ArticleRepository) {
     }
 
     @GetMapping("/article/{slug}")
-    fun article(@PathVariable slug: String, model: Model): String {
+    fun article1(@PathVariable slug: String, model: Model): String {
         val article = repository
             .findBySlug(slug)
             ?.render()
             ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "This article does not exist")
         model["title"] = article.title
         model["article"] = article
-        return "article"
+        return "article1"
     }
 
     fun Article.render() = RenderedArticle(

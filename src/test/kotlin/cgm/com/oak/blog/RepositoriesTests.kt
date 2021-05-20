@@ -2,6 +2,8 @@ package cgm.com.oak.blog
 
 import cgm.com.oak.blog.domain.models.Article
 import cgm.com.oak.blog.domain.models.User
+import cgm.com.oak.blog.doors.repositories.ArticleRepository
+import cgm.com.oak.blog.doors.repositories.UserRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
